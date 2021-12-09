@@ -26,8 +26,13 @@ INSTRUCTIONS
 
 EXPLANATION
 1. The first step is obviously to create an account with Liveperson. This sets up all the services and endpoints in the backend for this program to run.
-2. After the account is established, you will need the account number to get the two domain urls. One if for idp and the other is for asyncMessagingEnt.
+2. After the account is established, you will need the account number to get the two domain urls. One is for idp and the other is for asyncMessagingEnt.
 3. The idp url will return the jwt.
 4. The asyncMessagingEnt url provides the wss endpoint for the socket connection.
 5. Both steps 4&5 provide the details to establish the socket connection. 
 6. After the connection is established the websocket can be used to send and receive messages.
+
+
+ISSUES
+- WebSocket is already in CLOSING or CLOSED state.
+-   The above error could happen in various circumstances. One of them could be that the jwt is invalid or not specified while opening the websocket connection.
