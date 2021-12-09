@@ -24,7 +24,10 @@
         </header>
         <br>
         <section>
-            <button onclick="getdata()">Retrieve Domains</button>
+            <label>Account Number</label>
+            <input id=account type="text">
+            <button id=getDomains onclick="getdata()">Retrieve Domains</button>
+            <br><br>
             <table>
                 <tr>
                   <th>IDP Domain</th>
@@ -36,9 +39,11 @@
                 </tr>
               </table>
         </section>
+        <br>
+        <hr>
         <!-- message form -->
         <br>
-        <button id=start onclick="connectSocket()">Start Chat</button>
+        <button id=start onclick="connectSocket()">Connect</button>
         <button id=end onclick="disconnectSocket()">Disconnect</button>
         <label id=status></label>
         <br>
