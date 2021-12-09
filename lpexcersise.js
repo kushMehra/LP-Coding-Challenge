@@ -4,6 +4,7 @@ let jwt = "";
 let conversationId = null;
 let messageId = 0;
 let connectionStatus = false;
+let accountNumber = '78099952';
 var socket;
 
 document.getElementById("start").disabled = false;
@@ -12,7 +13,7 @@ document.getElementById("end").disabled = true;
 getdata = () => {
 
     //get the idp domain info
-    fetch('https://api.liveperson.net/api/account/78099952/service/idp/baseURI.json?version=1.0')
+    fetch('https://api.liveperson.net/api/account/' + accountNumber + '/service/idp/baseURI.json?version=1.0')
      .then(response => {
         if (response.ok) {
             return response.json();
@@ -25,7 +26,7 @@ getdata = () => {
             console.log(idpDomain);
 
             // if successful, retrieve the jwt that will be utilised to connect to the websocket
-            fetch('https://'+idpDomain+'/api/account/78099952/signup', {
+            fetch('https://'+idpDomain+'/api/account/' + accountNumber + '/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ getdata = () => {
         });
 
     // get the asyncMessagingEnt domain to send messages    
-    fetch('https://api.liveperson.net/api/account/78099952/service/asyncMessagingEnt/baseURI.json?version=1.0')
+    fetch('https://api.liveperson.net/api/account/' + accountNumber + '/service/asyncMessagingEnt/baseURI.json?version=1.0')
      .then(response => {
         if (response.ok) {
             return response.json();
@@ -67,7 +68,7 @@ getdata = () => {
 
 // establish the connection
 connectSocket = () => {
-    wssURL = "wss://" + msgDomain + "/ws_api/account/78099952/messaging/consumer?v=3";
+    wssURL = "wss://" + msgDomain + "/ws_api/account/" + accountNumber + "/messaging/consumer?v=3";
 
     if (!connectionStatus) {
         socket = new WebSocket(wssURL);
