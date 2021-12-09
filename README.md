@@ -34,5 +34,5 @@ EXPLANATION
 
 
 ISSUES
-- WebSocket is already in CLOSING or CLOSED state.
--   The above error could happen in various circumstances. One of them could be that the jwt is invalid or not specified while opening the websocket connection.
+- WebSocket is already in CLOSING or CLOSED state. This error could happen in various circumstances. One of them could be that the jwt is invalid or not specified while opening the websocket connection.
+- Invalid account number. If the account number is not valid, the idp domain fetch will not work and you will get an alert.
