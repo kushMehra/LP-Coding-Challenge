@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 50%;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    </head>
+    <body>
+        <header>
+            <h1><strong><bold>Live Person Excersise</bold></strong></h1>
+        </header>
+        <br>
+        <section>
+            <button onclick="getdata()">Retrieve Domains</button>
+            <table>
+                <tr>
+                  <th>IDP Domain</th>
+                  <th>MSG Domain</th>
+                </tr>
+                <tr>
+                  <td><label id="idpDomain"></label></td>
+                  <td><label id="msgDomain"></label></td>
+                </tr>
+              </table>
+        </section>
+        <!-- message form -->
+        <br>
+        <button id=start onclick="connectSocket()">Start Chat</button>
+        <button id=end onclick="disconnectSocket()">Disconnect</button>
+        <label id=status></label>
+        <br>
+        <h1>Messages</h1>
+        <form name="publish">
+            <input type="text" name="message">
+            <input type="submit" value="Send">
+        </form>
+        <!-- div with messages -->
+        <div id="messages"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="lpexcersise.js"></script>
+    </body>
+</html>
