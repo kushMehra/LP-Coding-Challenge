@@ -20,5 +20,6 @@ INSTRUCTIONS
 - Click on the 'Connect' button to open a websocket connection. This should update the view with 'Connection Established'.
 - The user can send messages using the input field and then pressing the 'Send' button.
 - The messages received from the server will appear in the view below.
+- You can verify the messages being sent to the agent on the liveperson conversation cloud Agent Workspace. NOTE: Look under All conversations tab.
 
 ![sequence-diagram](https://user-images.githubusercontent.com/20487020/145467013-92f71953-bde7-4da7-9ab9-5285551ecfcb.png)
