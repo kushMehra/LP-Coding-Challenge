@@ -23,3 +23,11 @@ INSTRUCTIONS
 - You can verify the messages being sent to the agent on the liveperson conversation cloud Agent Workspace. NOTE: Look under All conversations tab.
 
 ![sequence-diagram](https://user-images.githubusercontent.com/20487020/145467013-92f71953-bde7-4da7-9ab9-5285551ecfcb.png)
+
+EXPLANATION
+1. The first step is obviously to create an account with Liveperson. This sets up all the services and endpoints in the backend for this program to run.
+2. After the account is established, you will need the account number to get the two domain urls. One if for idp and the other is for asyncMessagingEnt.
+3. The idp url will return the jwt.
+4. The asyncMessagingEnt url provides the wss endpoint for the socket connection.
+5. Both steps 4&5 provide the details to establish the socket connection. 
+6. After the connection is established the websocket can be used to send and receive messages.
